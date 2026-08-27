@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lexum & Alcon Premium Cataract Academy 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-black: #0c0224;
+      --navy-dark:  #14053b;
+      --navy:       #2c0885;
+      --navy-light: #4414b8;
+      --cyan:       #87eeef;
+      --magenta:    #eb4bf7;
+      --grad:       linear-gradient(135deg, #87eeef 0%, #eb4bf7 100%);
+      --grad-90:    linear-gradient(90deg, #87eeef 0%, #eb4bf7 100%);
+      --bg:         #ffffff;
+      --surface:    #f8f7fc;
+      --text:       #120436;
+      --text-muted: #625784;
+      --line:       rgba(20, 5, 59, 0.12);
+      --line-dark:  rgba(255, 255, 255, 0.12);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-inner {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand-logos {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .logo-lexum {
+      height: 48px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .brand-sep {
+      width: 1px;
+      height: 36px;
+      background: var(--line);
+    }
+
+    .logo-alcon {
+      height: 34px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .btn-header {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--navy-dark);
+      padding: 12px 24px;
+      border: 1.5px solid var(--navy-dark);
+      text-decoration: none;
+      transition: all 0.22s ease;
+      background: transparent;
+    }
+
+    .btn-header:hover {
+      background: var(--navy-dark);
+      color: #ffffff;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy-dark);
+      color: #ffffff;
+      padding: 100px 0 90px;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5.2vw, 68px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      color: #ffffff;
+      max-width: 960px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span.gradient-text {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-motto {
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.85);
+      letter-spacing: -0.01em;
+      margin-bottom: 56px;
+      max-width: 800px;
+    }
+
+    .hero-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      padding-top: 40px;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .meta-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .meta-val {
+      font-size: 17px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.35;
+    }
+
+    /* ── WORKFLOW STRIP (Opravené pretekanie textu) ── */
+    .workflow-section {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .workflow-flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+    }
+
+    .wf-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .wf-node {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+
+    .wf-arrow {
+      color: var(--text-muted);
+      opacity: 0.45;
+      font-size: 13px;
+    }
+
+    /* ── PROGRAM SECTION ── */
+    .section-program {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      margin-bottom: 56px;
+    }
+
+    .sec-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .sec-title {
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 40px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: flex-start;
+    }
+
+    .timeline-row:first-child {
+      border-top: 1px solid var(--line);
+    }
+
+    .time-slot {
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--navy);
+      padding-top: 2px;
+    }
+
+    .row-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .step-tag {
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .event-title {
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .speaker-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy-light);
+      margin-top: 2px;
+    }
+
+    .event-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-top: 6px;
+    }
+
+    .workshop-block {
+      margin-top: 14px;
+      padding: 14px 0 0;
+      border-top: 1px dashed var(--line);
+    }
+
+    .workshop-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .workshop-text {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .topics-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      margin-top: 12px;
+    }
+
+    .topics-list li {
+      font-size: 14px;
+      color: var(--text);
+      position: relative;
+      padding-left: 14px;
+    }
+
+    .topics-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Program Illustration Banner */
+    .timeline-banner {
+      padding: 24px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(248, 247, 252, 0.5) 0%, rgba(255, 255, 255, 0.8) 100%);
+    }
+
+    .timeline-banner img {
+      max-width: 480px;
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+    }
+
+    /* Break rows */
+    .timeline-row.break-row {
+      background: transparent;
+      padding: 24px 0;
+    }
+
+    .timeline-row.break-row .event-title {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ── QUOTE SECTION ── */
+    .quote-section {
+      padding: 60px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .quote-inner {
+      max-width: 860px;
+    }
+
+    .quote-inner blockquote {
+      font-size: clamp(20px, 2.8vw, 30px);
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+      color: var(--navy-dark);
+      font-style: italic;
+    }
+
+    /* ── OUTDOOR DAY ── */
+    .outdoor-strip {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 40px;
+      align-items: baseline;
+    }
+
+    .outdoor-activities {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .act-item {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .act-item::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--navy);
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    /* ── RSVP SECTION ── */
+    .rsvp-section {
+      background: var(--navy-dark);
+      color: #ffffff;
+      padding: 100px 0 110px;
+    }
+
+    .rsvp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: flex-start;
+    }
+
+    .rsvp-info h2 {
+      font-size: clamp(28px, 3.5vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .rsvp-info p {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .rsvp-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      border-top: 1px solid var(--line-dark);
+      padding-top: 24px;
+    }
+
+    .rsvp-b-item {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.85);
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .rsvp-b-item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    .form-minimal {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-control {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 15px;
+      padding: 12px 0;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .form-control:focus {
+      border-bottom-color: var(--cyan);
+    }
+
+    .form-select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14.5px;
+      padding: 12px 0;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .form-select option {
+      background: var(--navy-dark);
+      color: #ffffff;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--grad);
+      color: var(--navy-black);
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      padding: 16px 36px;
+      border: none;
+      cursor: pointer;
+      margin-top: 16px;
+      transition: all 0.22s ease;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(235, 75, 247, 0.35);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-black);
+      color: rgba(255, 255, 255, 0.45);
+      padding: 40px 0;
+      font-size: 13px;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .foot-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Responzivita */
+    @media (max-width: 860px) {
+      .hero-meta-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .timeline-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .outdoor-strip {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .rsvp-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .topics-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <div class="brand-logos">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABcIAAAFqCAYAAAA5jilEAAABYWlDQ1BJQ0MgUHJvZmlsZQAAKJFtkL1Lw1AUxU+0WpGADiqCDhnEQVqp8YPi1lZRoUOpFtQtTWMqtOkjiYibgzoXFMGtxMW/QBcHRwdBQXAQEWdXsSC2xvsata36Hof743DP5XKBFlFhLOcDkDdsMzkXlZZXViX/MzowABHtCCqqxSKJRJxa8F2bX/kOAq+3QT4r3Ht1OfLxZh6Wsk5lem/7b3/T68xolkq1QpJVZtqAECJObNqMM8/3mLQU8QFn3eMTzmmPz2s9S8kY8Q1xt5pVMsRPxIF0g683cD63oX7twLcXNSO1SLWPNIgZzCJOX0IKMiYxRpqnG/2fmahlYiiAYQsm1qEjC5vSEXIYctCIF2BAxSgCxDJCpCl+6983rHsFBwi/Aq3Fupc+As52gf77ujdUArp2gNNrppjKz2WFss9aG5c9FqNA26PrvgwD/n2gWnTdd8d1q8c0/wG4MD4BLnNlbdURQo8AAABWZVhJZk1NACoAAAAIAAGHaQAEAAAAAQAAABoAAAAAAAOShgAHAAAAEgAAAESgAgAEAAAAAQAABcKgAwAEAAAAAQAAAWoAAAAAQVNDSUkAAABTY3JlZW5zaG90DRDogwAAAddpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDYuMC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8ZXhpZjpQaXhlbFlEaW1lbnNpb24+MzYyPC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6UGl4ZWxYRGltZW5zaW9uPjE0NzQ8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpVc2VyQ29tbWVudD5TY3JlZW5zaG90PC9leGlmOlVzZXJDb21tZW50PgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4K4yBeBQAAQABJREFUeAHsnQWAXcX1xicJbsGLQ3AP7lZokRaHQoECBUqRlgYo7hQrBYK7S/Hg7hDcJYUCJfDH3VKkSPI/3zlz5s59775lN9nd7L73Dbw3M8dm7u9eIHx7994+o6QFNhIgARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoUgJ9m/S4eFgkQAIkQAIkQAIkQAIkQAIkQAIkQAIkQAIkQAIkQAIkoAQohPNCIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAhTCm/r08uBIgARIgARIgARIgARIgARIgARIgARIgARIgARIgAQohPMaIAESIAESIAESIAESIAESIAESIAESIAESIAESIAESaGoCFMKb+vTy4EiABEiABEiABEiABEiABEiABEiABEiABEiABEiABCiE8xogARIgARIgARIgARIgARIgARIgARIgARIgARIgARJoagIUwpv69PLgSIAESIAESIAESIAESIAESIAESIAESIAESIAESIAEKITzGiABEiABEiABEiABEiABEiABEiABEiABEiABEiABEmhqAv8P7F36W2G90XIAAAAASUVORK5CYII=" alt="Alcon" class="logo-alcon">
+      </div>
+      <a href="#registracia" class="btn-header">Potvrdiť účasť</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">Odborné sympózium & Workshop</span>
+      <h1>Lexum & Alcon <br><span class="gradient-text">Premium Cataract Academy 2026</span></h1>
+      <div class="hero-motto">„From Cataract Surgery to Refractive Cataract Surgery“</div>
+
+      <div class="hero-meta-grid">
+        <div class="meta-item">
+          <span class="meta-label">Dátum</span>
+          <span class="meta-val">18. september 2026<br><span style="font-size:14px; font-weight:400; color:rgba(255,255,255,0.7);">(voliteľný program 19. september)</span></span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Miesto konania</span>
+          <span class="meta-val">Hotel Impozant<br><span style="font-size:14px; font-weight:400; color:rgba(255,255,255,0.7);">Valčianska dolina</span></span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Čas otvorenia</span>
+          <span class="meta-val">10:00 hod.<br><span style="font-size:14px; font-weight:400; color:rgba(255,255,255,0.7);">Registrácia od 09:30</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW RIBBON: Opravené flex zobrazenie a zalomenie -->
+  <div class="workflow-section">
+    <div class="container">
+      <div class="workflow-flex">
+        <div class="wf-item"><span class="wf-node">Patient Needs</span><span class="wf-arrow">→</span></div>
+        <div class="wf-item"><span class="wf-node">Diagnostics</span><span class="wf-arrow">→</span></div>
+        <div class="wf-item"><span class="wf-node">Astigmatism Management</span><span class="wf-arrow">→</span></div>
+        <div class="wf-item"><span class="wf-node">IOL Selection</span><span class="wf-arrow">→</span></div>
+        <div class="wf-item"><span class="wf-node">Planning</span><span class="wf-arrow">→</span></div>
+        <div class="wf-item"><span class="wf-node">Surgery</span><span class="wf-arrow">→</span></div>
+        <div class="wf-item"><span class="wf-node">Outcomes &amp; Satisfaction</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAM SECTION -->
+  <section class="section-program" id="program">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="sec-label">Harmonogram</span>
+        <h2 class="sec-title">Odborný program a workshopy</h2>
+      </div>
+
+      <div class="timeline">
+        
+        <!-- Úvod -->
+        <div class="timeline-row">
+          <div class="time-slot">10:00 – 10:10</div>
+          <div class="row-content">
+            <span class="step-tag">Úvodný blok</span>
+            <h3 class="event-title">Otvorenie podujatia & Budúcnosť kataraktovej chirurgie</h3>
+            <div class="speaker-name">S. Dzur, Medical Director Lexum SK</div>
+            <p class="event-desc">Od odstránenia katarakty k modernému refrakčnému riešeniu.</p>
+          </div>
+        </div>
+
+        <!-- 1. KROK -->
+        <div class="timeline-row">
+          <div class="time-slot">10:10 – 11:10</div>
+          <div class="row-content">
+            <span class="step-tag">1. Krok</span>
+            <h3 class="event-title">Čo pacient skutočne očakáva?</h3>
+            <p class="event-desc">Cesta k okuliarovej nezávislosti. Zmena profilu pacientov (aktívny senior 60+, pacienti so začínajúcou presbyopiou), moderné potreby videnia a dôvody, prečo pacientov zbaviť závislosti od okuliarov.</p>
+            <div class="workshop-block">
+              <div class="workshop-label">Workshop: Patient Journey</div>
+              <div class="workshop-text">3 modeloví pacienti · Identifikácia potrieb · Definovanie refrakčného cieľa</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. KROK -->
+        <div class="timeline-row">
+          <div class="time-slot">11:20 – 12:20</div>
+          <div class="row-content">
+            <span class="step-tag">2. Krok</span>
+            <h3 class="event-title">Správna diagnostika & Astigmatizmus</h3>
+            <p class="event-desc">Astigmatizmus ako najčastejšia bariéra úspechu. Význam rohovkového astigmatizmu, klinické dôsledky nekorigovania a indikácie pre torickú IOL.</p>
+            <div class="workshop-block">
+              <div class="workshop-label">Workshop: Biometry & Toric Planning</div>
+              <div class="workshop-text">Interpretácia meraní · Výber torickej IOL · Plánovanie osi implantácie</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ILUSTRACE DO PROSTŘEDKU PROGRAMU -->
+        <div class="timeline-banner">
+          <img src="Screenshot 2026-08-27 at 14.27.50.jpg" alt="Cataract Eye Illustration">
+        </div>
+
+        <!-- Obed -->
+        <div class="timeline-row break-row">
+          <div class="time-slot" style="color:var(--text-muted);">12:20 – 13:00</div>
+          <div class="row-content">
+            <h3 class="event-title">Obedňajšia prestávka</h3>
+          </div>
+        </div>
+
+        <!-- 3. KROK -->
+        <div class="timeline-row">
+          <div class="time-slot">13:00 – 14:00</div>
+          <div class="row-content">
+            <span class="step-tag">3. Krok</span>
+            <h3 class="event-title">Ktorá IOL pre ktorého pacienta?</h3>
+            <p class="event-desc">Monofocal • Vivity • PanOptix PRO. Správny pacient pre správnu technológiu, porovnanie EDOF vs. multifokálna IOL, indikácie, kontraindikácie a reálne očakávania.</p>
+            <div class="workshop-block">
+              <div class="workshop-label">Decision Tree Workshop</div>
+              <div class="workshop-text">10 pacientov · 10 rozhodnutí · 1 správna stratégia</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. KROK -->
+        <div class="timeline-row">
+          <div class="time-slot">14:10 – 15:10</div>
+          <div class="row-content">
+            <span class="step-tag">4. Krok</span>
+            <h3 class="event-title">Ako dosiahnuť predvídateľný výsledok?</h3>
+            <div class="speaker-name">D. Opltová, Training Manager Alcon</div>
+            <p class="event-desc">Piliere úspešnej refrakčnej chirurgie a materiálové vlastnosti IOL:</p>
+            <ul class="topics-list">
+              <li><strong>BioMaterial™:</strong> materiál a dlhodobá stabilita IOL</li>
+              <li><strong>BioOptics™:</strong> optika a kvalita videnia</li>
+              <li><strong>BioMechanics™:</strong> centrácia, efektívna pozícia a rotácia</li>
+              <li><strong>Refrakčná predikovateľnosť</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 5. KROK -->
+        <div class="timeline-row">
+          <div class="time-slot">15:20 – 16:20</div>
+          <div class="row-content">
+            <span class="step-tag">5. Krok</span>
+            <h3 class="event-title">Spokojný pacient: Komunikácia Premium Cataract Surgery</h3>
+            <p class="event-desc">Odhalenie očakávaní, komunikácia okuliarovej nezávislosti, torické IOL, EDOF a multifokálne riešenia, halo, glare, neuroadaptácia a komplexný manažment očakávaní pacienta.</p>
+          </div>
+        </div>
+
+        <!-- Coffee Break -->
+        <div class="timeline-row break-row">
+          <div class="time-slot" style="color:var(--text-muted);">16:20 – 16:30</div>
+          <div class="row-content">
+            <h3 class="event-title">Coffee Break</h3>
+          </div>
+        </div>
+
+        <!-- 6. KROK -->
+        <div class="timeline-row">
+          <div class="time-slot">16:30 – 17:30</div>
+          <div class="row-content">
+            <span class="step-tag">6. Krok</span>
+            <h3 class="event-title">Od diagnostiky k operácii: Kompletný refrakčný workflow</h3>
+            <div class="speaker-name">I. Mani, Clinical Application Specialist Alcon</div>
+            <p class="event-desc">Diagnostika → Výber IOL → Výpočet → Plánovanie → Implantácia → Follow-up.</p>
+            <div class="workshop-block">
+              <div class="workshop-label">SMARTCataract DX Live Demo & Biometria</div>
+              <div class="workshop-text">Integrácia dát, výpočet a výber IOL · ARGOS & Corneal Assessment · Premium IOL Lab (Manual Loading, UltraSert, AutonoMe)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expert Panel -->
+        <div class="timeline-row">
+          <div class="time-slot">17:30 – 18:00</div>
+          <div class="row-content">
+            <span class="step-tag">Záver odborného dňa</span>
+            <h3 class="event-title">Expert Panel & Key Takeaways</h3>
+          </div>
+        </div>
+
+        <!-- Dinner -->
+        <div class="timeline-row">
+          <div class="time-slot">18:30</div>
+          <div class="row-content">
+            <span class="step-tag">Spoločenský večer</span>
+            <h3 class="event-title">Networking Dinner</h3>
+            <p class="event-desc">Neformálne diskusie, networking s kolegami a prednášajúcimi.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CITÁT -->
+  <div class="quote-section">
+    <div class="container quote-inner">
+      <blockquote>
+        „Moderná kataraktová chirurgia nezačína výberom šošovky. Začína pochopením potrieb pacienta a končí jeho spokojnosťou.“
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- SOBOTA OUTDOOR -->
+  <div class="container">
+    <div class="outdoor-strip">
+      <div>
+        <span class="step-tag">19. september 2026</span>
+        <div style="font-size:15px; font-weight:700; color:var(--navy); margin-top:2px;">Voliteľný program</div>
+      </div>
+      <div>
+        <h3 style="font-size:20px; font-weight:700; color:var(--text); margin-bottom:4px;">Outdoor Experience</h3>
+        <p style="font-size:14.5px; color:var(--text-muted);">Spoločné športové a relaxačné aktivity vo Valčianskej doline.</p>
+        <div class="outdoor-activities">
+          <div class="act-item">Cyklistika</div>
+          <div class="act-item">Turistika</div>
+          <div class="act-item">Ferrata</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RSVP -->
+  <section class="rsvp-section" id="registracia">
+    <div class="container">
+      <div class="rsvp-grid">
+        <div class="rsvp-info">
+          <h2>Potvrdenie účasti</h2>
+          <p>Kapacita podujatia je limitovaná z dôvodu praktických workshopov. Prosíme o včasné potvrdenie vašej účasti.</p>
+          
+          <div class="rsvp-bullets">
+            <div class="rsvp-b-item">Účasť na celom odbornom programe a workshopoch</div>
+            <div class="rsvp-b-item">Obed, občerstvenie a účasť na Networking Dinner</div>
+            <div class="rsvp-b-item">Možnosť prihlásenia na sobotňajší Outdoor Experience</div>
+          </div>
+        </div>
+
+        <div>
+          <form class="form-minimal" onsubmit="event.preventDefault(); alert('Ďakujeme za potvrdenie účasti.');">
+            <div class="form-row">
+              <input type="text" class="form-control" placeholder="Meno a titul" required>
+              <input type="text" class="form-control" placeholder="Priezvisko" required>
+            </div>
+            <input type="text" class="form-control" placeholder="Pracovisko / Klinika" required>
+            <div class="form-row">
+              <input type="email" class="form-control" placeholder="E-mailová adresa" required>
+              <input type="tel" class="form-control" placeholder="Telefónne číslo" required>
+            </div>
+            <select class="form-select">
+              <option value="all">Piatok: Odborný program + Networking Dinner</option>
+              <option value="both_days">Piatok + Sobota (Outdoor Experience)</option>
+              <option value="friday_day">Iba piatkový odborný program (bez večere)</option>
+            </select>
+            <input type="text" class="form-control" placeholder="Poznámka / diétne preferencie (nepovinné)">
+            <div>
+              <button type="submit" class="btn-submit">Odoslať registráciu</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot-flex">
+      <div>© 2026 LEXUM SK & Alcon · Premium Cataract Academy</div>
+      <div>Hotel Impozant, Valčianska dolina · 18. – 19. september 2026</div>
+    </div>
+  </footer>
+
+</body>
+</html>
