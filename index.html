@@ -63,7 +63,7 @@
       height: 90px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 24px;
     }
 
@@ -91,23 +91,6 @@
       width: auto;
       display: block;
       object-fit: contain;
-    }
-
-    .btn-header {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: var(--navy-dark);
-      padding: 12px 24px;
-      border: 1.5px solid var(--navy-dark);
-      text-decoration: none;
-      transition: all 0.22s ease;
-      background: transparent;
-    }
-
-    .btn-header:hover {
-      background: var(--navy-dark);
-      color: #ffffff;
     }
 
     /* ── HERO ── */
@@ -352,7 +335,7 @@
       font-weight: 700;
     }
 
-    /* Riadok s ilustráciou na stred a bez orámovania */
+    /* Riadok s ilustráciou na stred */
     .timeline-row.illustration-center-row {
       display: flex;
       justify-content: center;
@@ -567,6 +550,26 @@
       box-shadow: 0 8px 24px rgba(235, 75, 247, 0.35);
     }
 
+    .alert-box {
+      padding: 14px 20px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      font-size: 14.5px;
+      border-radius: 4px;
+    }
+
+    .alert-success {
+      background: rgba(135, 238, 239, 0.15);
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+    }
+
+    .alert-error {
+      background: rgba(235, 75, 247, 0.15);
+      border: 1px solid var(--magenta);
+      color: #ffffff;
+    }
+
     /* ── FOOTER ── */
     footer {
       background: var(--navy-black);
@@ -584,7 +587,6 @@
       gap: 16px;
     }
 
-    /* Responzivita */
     @media (max-width: 860px) {
       .hero-meta-grid {
         grid-template-columns: 1fr;
@@ -616,7 +618,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER: Tlačítko odstraněno -->
   <header>
     <div class="container header-inner">
       <div class="brand-logos">
@@ -624,7 +626,6 @@
         <div class="brand-sep"></div>
         <img src="logo-alcon.png" alt="Alcon" class="logo-alcon">
       </div>
-      <a href="#registracia" class="btn-header">Potvrdiť účasť</a>
     </div>
   </header>
 
@@ -848,7 +849,7 @@
     </div>
   </div>
 
-  <!-- RSVP -->
+  <!-- RSVP: Funkční formulář s napojením na send.php -->
   <section class="rsvp-section" id="registracia">
     <div class="container">
       <div class="rsvp-grid">
@@ -864,22 +865,29 @@
         </div>
 
         <div>
-          <form class="form-minimal" onsubmit="event.preventDefault(); alert('Ďakujeme za potvrdenie účasti.');">
+          <!-- Zobrazení hlášky o úspěchu / chybě po odeslání -->
+          <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+            <div class="alert-box alert-success">Ďakujeme! Vaša registrácia bola úspešne odoslaná.</div>
+          <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
+            <div class="alert-box alert-error">Pri odosielaní formulára nastala chyba. Skontrolujte prosím vyplnené údaje.</div>
+          <?php endif; ?>
+
+          <form class="form-minimal" method="POST" action="send.php">
             <div class="form-row">
-              <input type="text" class="form-control" placeholder="Meno a titul" required>
-              <input type="text" class="form-control" placeholder="Priezvisko" required>
+              <input type="text" name="first_name" class="form-control" placeholder="Meno a titul" required>
+              <input type="text" name="last_name" class="form-control" placeholder="Priezvisko" required>
             </div>
-            <input type="text" class="form-control" placeholder="Pracovisko / Klinika" required>
+            <input type="text" name="workplace" class="form-control" placeholder="Pracovisko / Klinika" required>
             <div class="form-row">
-              <input type="email" class="form-control" placeholder="E-mailová adresa" required>
-              <input type="tel" class="form-control" placeholder="Telefónne číslo" required>
+              <input type="email" name="email" class="form-control" placeholder="E-mailová adresa" required>
+              <input type="tel" name="phone" class="form-control" placeholder="Telefónne číslo" required>
             </div>
-            <select class="form-select">
-              <option value="all">Piatok: Odborný program + Networking Dinner</option>
-              <option value="both_days">Piatok + Sobota (Outdoor Experience)</option>
-              <option value="friday_day">Iba piatkový odborný program (bez večere)</option>
+            <select name="attendance" class="form-select" required>
+              <option value="Piatok: Odborný program + Networking Dinner">Piatok: Odborný program + Networking Dinner</option>
+              <option value="Piatok + Sobota (Outdoor Experience)">Piatok + Sobota (Outdoor Experience)</option>
+              <option value="Iba piatkový odborný program (bez večere)">Iba piatkový odborný program (bez večere)</option>
             </select>
-            <input type="text" class="form-control" placeholder="Poznámka / diétne preferencie (nepovinné)">
+            <input type="text" name="note" class="form-control" placeholder="Poznámka / diétne preferencie (nepovinné)">
             <div>
               <button type="submit" class="btn-submit">Odoslať registráciu</button>
             </div>
