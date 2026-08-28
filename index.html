@@ -50,7 +50,7 @@
       padding: 0 32px;
     }
 
-    /* ── HEADER ── */
+    /* ── HEADER (BEZ TLAČÍTKA) ── */
     header {
       background: #ffffff;
       border-bottom: 1px solid var(--line);
@@ -335,7 +335,7 @@
       font-weight: 700;
     }
 
-    /* Riadok s ilustráciou na stred */
+    /* Riadok s ilustráciou */
     .timeline-row.illustration-center-row {
       display: flex;
       justify-content: center;
@@ -618,7 +618,7 @@
 </head>
 <body>
 
-  <!-- HEADER: Tlačítko odstraněno -->
+  <!-- HEADER -->
   <header>
     <div class="container header-inner">
       <div class="brand-logos">
@@ -849,7 +849,7 @@
     </div>
   </div>
 
-  <!-- RSVP: Funkční formulář s napojením na send.php -->
+  <!-- RSVP -->
   <section class="rsvp-section" id="registracia">
     <div class="container">
       <div class="rsvp-grid">
@@ -865,7 +865,6 @@
         </div>
 
         <div>
-          <!-- Zobrazení hlášky o úspěchu / chybě po odeslání -->
           <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
             <div class="alert-box alert-success">Ďakujeme! Vaša registrácia bola úspešne odoslaná.</div>
           <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
