@@ -73,8 +73,8 @@
     }
 
     .logo-main {
-      height: 38px;
-      width: auto;
+      height: auto;
+      width: 100px;
       display: block;
       object-fit: contain;
     }
@@ -850,30 +850,8 @@
         </div>
 
         <div>
-          <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-            <div class="alert-box alert-success">Ďakujeme! Vaša registrácia bola úspešne odoslaná.</div>
-          <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
-            <div class="alert-box alert-error">Pri odosielaní formulára nastala chyba. Skontrolujte prosím vyplnené údaje.</div>
-          <?php endif; ?>
-
-          <form class="form-minimal" method="POST" action="send.php">
-            <div class="form-row">
-              <input type="text" name="first_name" class="form-control" placeholder="Meno a titul" required>
-              <input type="text" name="last_name" class="form-control" placeholder="Priezvisko" required>
-            </div>
-            <input type="text" name="workplace" class="form-control" placeholder="Pracovisko / Klinika" required>
-            <div class="form-row">
-              <input type="email" name="email" class="form-control" placeholder="E-mailová adresa" required>
-              <input type="tel" name="phone" class="form-control" placeholder="Telefónne číslo" required>
-            </div>
-            <select name="attendance" class="form-select" required>
-              <option value="Piatok: Odborný program + Networking Dinner">Piatok: Odborný program + Networking Dinner</option>
-              <option value="Piatok + Sobota (Outdoor Experience)">Piatok + Sobota (Outdoor Experience)</option>
-              <option value="Iba piatkový odborný program (bez večere)">Iba piatkový odborný program (bez večere)</option>
-            </select>
-            <input type="text" name="note" class="form-control" placeholder="Poznámka / diétne preferencie (nepovinné)">
-            <div>
-              <button type="submit" class="btn-submit">Odoslať registráciu</button>
+                      <div>
+              <button type="submit" class="btn-submit">Registrácia zde</button>
             </div>
           </form>
         </div>
